@@ -1,54 +1,66 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import Link from "./ui/link.astro";
 
 const features = [
   {
-    title: "Derribamos barreras financieras",
+    title: "Encuentra tu casa",
     description:
       "Conectamos compradores con inversores, facilitando el acceso a viviendas",
     icon: "bx:bxs-bank",
+    buttonTitle: "Buscar",
+    hreflink: "/buscador"
   },
   {
-    title: "Acceso más rápido a tu vivienda",
+    title: "Aplica con nosotros",
     description:
       "Múdate en sólo 30 días, acelerando el proceso tradicional",
     icon: "bx:bxs-timer",
+    buttonTitle: "Buscar",
+    hreflink: "/contactanos"
   },
   {
-    title: "Educación financiera",
+    title: "Paga tu vivienda mensualmente",
     description:
       "Brindamos asesoría financiera para mejorar tu perfil crediticio",
     icon: "bx:bxs-data",
+    buttonTitle: "Buscar",
+    hreflink: "/contactanos"
   },
   {
-    title: "Proceso Simple",
+    title: "Adquiere tu casa",
     description:
       "Sin millones de documentos, aplica sin dificultad y estaremos en contacto contigo",
     icon: "bx:bxs-file",
+    buttonTitle: "Buscar",
+    hreflink: "/contactanos"
   }
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Tu sueño de casa propia nunca tan cerca
+    ¿Cómo funciona?
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Trabaja con nosotros y múdate en menos de 30 días, aquí los pasos de cómo funciona
+    Se parte de ViviendoYa siguiendo estos simples pasos
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-2 mb-16 mt-16 gap-24">
+<div class="grid sm:grid-cols-2 md:grid-cols-4 mt-16 gap-16">
   {
     features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-blue-900 rounded-full  p-2 w-12 h-12 shrink-0">
+      <div class="flex flex-col gap-4 items-center">
+        <div class="mt-1 bg-blue-900 rounded-full  p-2 w-12 h-12 shrink-0 flex justify-center items-center">
           <Icon class="text-white w-8 h-8" name={item.icon} />
         </div>
-        <div>
+        <div class="text-center">
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+        <div class="mt-auto lg:flex items-center gap-4">
+            <Link href=`${item.hreflink}` size="md">{item.buttonTitle}</Link>
         </div>
       </div>
     ))
