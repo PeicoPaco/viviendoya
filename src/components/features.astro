@@ -1,6 +1,8 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import heroImage from "assets/moving_01.jpg";
+import Picture from "astro/components/Picture.astro";
 
 const features = [
   {
@@ -39,18 +41,29 @@ const features = [
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-2 mb-16 mt-16 gap-24">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-blue-900 rounded-full  p-2 w-12 h-12 shrink-0">
+<div class="grid sm:grid-cols-1 md:grid-cols-2 mb-16 mt-16 gap-24">
+  <div class="col-span-1 self-center">
+    {features.map((item) => (
+      <div class="flex gap-4 items-start mb-16">
+        <div class="mt-1 bg-sky-500 rounded-full p-2 w-12 h-12 shrink-0">
           <Icon class="text-white w-8 h-8" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-lg">{item.title}</h3>
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
-    ))
-  }
+    ))}
+  </div>
+  <div class="col-span-1 flex items-start md:items-center justify-self-center">
+    <Picture
+      src={heroImage}
+      alt="Astronaut in the air"
+      widths={[200, 400, 800]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+      class="rounded-lg shadow-lg w-full"
+    />
+  </div>
 </div>

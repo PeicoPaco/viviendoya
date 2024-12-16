@@ -2,11 +2,10 @@
 import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="Contact">
+<div id="contact-section">
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contactanos</Fragment>
@@ -22,8 +21,8 @@ import { Icon } from "astro-icon/components";
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >henry.navarro@astroshipstarter.com</a
+              href="mailto:hogarsinbarreras@viviendoya.lat"
+              >hogarsinbarreras@viviendoya.lat</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
@@ -37,4 +36,4 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
   </Container>
-</Layout>
+</div>
