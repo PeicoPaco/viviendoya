@@ -4,6 +4,9 @@ import { Image } from 'astro:assets';
 import { supabase } from "@lib/supabase";
 import Sectionhead from "@components/sectionhead.astro";
 import Container from "@components/container.astro";
+import Propertycard from "@components/propertycard.astro";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 const { data, error} = await supabase
     .from('properties')
     .select()
@@ -15,25 +18,18 @@ const { data, error} = await supabase
             <Fragment slot="title">Busca tu casa</Fragment>
             <Fragment slot="desc">Encuentra la casa de tus sueños</Fragment>
         </Sectionhead>
-        <ul role="list" class="link-card-grid">
+        <ul role="list" class="link-card-grid mt-4">
             {data?.map((property) => (
-                <li>
-                    <div>{property.name}</div>
-                    <div>{property.price}</div>
-                    <div>{property.locations}</div>
-                    <div>{property.district}</div>
-                    <div>{property.dorms}</div>
-                    <div>
-                        <Image
-                            src={property.image}
-                            width="800"
-                            height="450"
-                            decoding="async"
-                            loading="lazy"
-                            alt={`Image of ${property.name}`}
-                        />
-                    </div>
-                </li>
+                <Propertycard 
+                    image = {property.image}
+                    price = {property.price}
+                    name = {property.name}
+                    location = {property.location}
+                    district = {property.district}
+                    area = {property.area}
+                    dorms = {property.dorms}
+                    bathrooms = {property.baths}
+                />
             ))}
         </ul>
     <Container/>
