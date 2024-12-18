@@ -11,13 +11,9 @@ const menuitems = [
     path: "/nosotros",
   },
   {
-    title: "Calculadora",
-    path: "/calculadora",
-  },
-  {
     title: "Encuentra tu vivienda",
     badge: true,
-    path: "/buscador",
+    path: "/search",
   },
 ];
 ---
@@ -27,7 +23,7 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="flex items-center">
-          <img src={logo.src} alt="Logo" class="h-8 w-18" />
+          <img src={logo.src} alt="Logo" class="h-10 w-21" />
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -60,13 +56,13 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" size="md" block>Contactanos</Link>
+          <Link href="#contact-section" size="md" block>Contactanos</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="/contact" size="md">Contactanos</Link>
+        <Link href="#contact-section" size="md">Contactanos</Link>
       </div>
     </div>
   </header>

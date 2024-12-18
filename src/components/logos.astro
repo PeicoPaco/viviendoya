@@ -1,17 +1,46 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import Image from "astro/components/Image.astro";
+import emprendeNinja from '@assets/EmprendeNinja.png'
+import hubUdep from '@assets/HUBUDEP.png'
+import startUPC from '@assets/STARTUPC.png'
+import Sectionhead from "./sectionhead.astro";
 ---
 
 <div class="mt-8">
+  <Sectionhead>
+    <Fragment slot="title"></Fragment>
+    <Fragment slot="desc">Nuestros Aliados</Fragment>
+  </Sectionhead>
   <div class="flex gap-8 md:gap-20 items-center justify-center mt-2 mb-20 flex-wrap">
 
-    <Icon class="size-8 md:size-12" name="simple-icons:react" />
-    <Icon class="size-8 md:size-12" name="simple-icons:svelte" />
-    <Icon class="size-8 md:size-12" name="simple-icons:astro" />
-    <Icon class="size-8 md:size-16" name="simple-icons:tailwindcss" />
-    <Icon class="size-8 md:size-16" name="simple-icons:alpinedotjs" />
-    <Icon class="size-8 md:size-12" name="simple-icons:vercel" />
+    <Image
+    src={emprendeNinja}
+    width="200"
+    height="100"
+    decoding="async"
+    loading="lazy"
+    alt="Emprende Ninja"
+    />
+
+    <Image
+    src={hubUdep}
+    width="200"
+    height="100"
+    decoding="async"
+    loading="lazy"
+    alt="Hub Udep"
+    />
+
+    <Image
+    src={startUPC}
+    width="200"
+    height="100"
+    decoding="async"
+    loading="lazy"
+    alt="StartUPC"
+    />
 
   </div>
 </div>

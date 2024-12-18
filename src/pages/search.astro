@@ -1,0 +1,41 @@
+---
+import Layout from "@layouts/Layout.astro"; 
+import { Image } from 'astro:assets';
+import { supabase } from "@lib/supabase";
+import Sectionhead from "@components/sectionhead.astro";
+import Container from "@components/container.astro";
+const { data, error} = await supabase
+    .from('properties')
+    .select()
+---
+
+<Layout title="search">
+    <Container>
+        <Sectionhead>
+            <Fragment slot="title">Busca tu casa</Fragment>
+            <Fragment slot="desc">Encuentra la casa de tus sueños</Fragment>
+        </Sectionhead>
+        <ul role="list" class="link-card-grid">
+            {data?.map((property) => (
+                <li>
+                    <div>{property.name}</div>
+                    <div>{property.price}</div>
+                    <div>{property.locations}</div>
+                    <div>{property.district}</div>
+                    <div>{property.dorms}</div>
+                    <div>
+                        <Image
+                            src={property.image}
+                            width="800"
+                            height="450"
+                            decoding="async"
+                            loading="lazy"
+                            alt={`Image of ${property.name}`}
+                        />
+                    </div>
+                </li>
+            ))}
+        </ul>
+    <Container/>
+</Layout>
+

@@ -1,18 +1,19 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "assets/moving_01.jpg";
+import heroImage from "assets/HappyCouple2.png";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-2 md:pb-2">
+  class="grid lg:grid-cols-2 place-items-center pt-8 pb-8 md:pt-2 md:pb-2">
   <div class="md:order-1 hidden md:block">
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
+      height={600}
+      widths={[200,400,600]}
+      sizes="(max-width: 600px) 100vw, 600px"
       loading="eager"
       format="avif"
     />
@@ -20,19 +21,17 @@ import { Icon } from "astro-icon/components";
   <div>
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Te ayudamos a cumplir tu sueño de casa propia
+      Tu sueño de casa propia
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Promovemos el acceso a la vivienda propia, permitiéndote mudarte en tan sólo 30 días, sin papeleos excesivos.
+      Promovemos el acceso a la vivienda propia, múdate en tan sólo 30 días a la casa de tus sueños.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
+        href="#contact-section"
         class="flex gap-1 items-center justify-center"
         rel="noopener">
-         Conoce más
+         Contáctanos
       </Link>
     </div>
   </div>
